@@ -1,0 +1,51 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: https://github.com/signalfx/signalfx-go
+note: >-
+  No official hosted/remote SignalFx MCP server was found. This is a CANDIDATE
+  tool list derived from the resource surface of the signalfx-go client library
+  (which is generated from the SignalFx REST OpenAPI). Not an authoritative
+  provider manifest.
+server:
+  name: signalfx
+  transport: http
+tools:
+- name: list_detectors
+  description: List/search alert detectors
+- name: get_detector
+  description: Retrieve a detector by ID
+- name: create_detector
+  description: Create an alert detector
+- name: update_detector
+  description: Update a detector
+- name: delete_detector
+  description: Delete a detector
+- name: list_charts
+  description: List/search charts
+- name: get_chart
+  description: Retrieve a chart by ID
+- name: create_chart
+  description: Create a chart
+- name: list_dashboards
+  description: List/search dashboards
+- name: get_dashboard
+  description: Retrieve a dashboard by ID
+- name: list_dashboard_groups
+  description: List dashboard groups
+- name: list_muting_rules
+  description: List alert muting rules
+- name: create_muting_rule
+  description: Create an alert muting rule
+- name: list_slos
+  description: List Service Level Objectives
+- name: get_metric_metadata
+  description: Retrieve metric metadata
+- name: search_metrics
+  description: Search metrics and dimensions metadata
+- name: list_integrations
+  description: List cloud/notification integrations (AWS, Azure, GCP, PagerDuty, Slack, etc.)
+- name: list_tokens
+  description: List organization/access tokens
+- name: list_teams
+  description: List teams

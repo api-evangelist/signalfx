@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/signalfx
+note: >-
+  First-party SignalFx client libraries. Following the Splunk acquisition and the
+  company's move to OpenTelemetry, most language libraries have been archived/
+  deprecated in favor of the Splunk Distribution of OpenTelemetry; signalfx-go
+  remains the actively maintained REST/metadata client.
+packages:
+- language: go
+  registry: pkg.go.dev
+  name: github.com/signalfx/signalfx-go
+  url: https://pkg.go.dev/github.com/signalfx/signalfx-go
+  install: go get github.com/signalfx/signalfx-go
+  repository: https://github.com/signalfx/signalfx-go
+  official: true
+  status: active
+- language: python
+  registry: pypi
+  name: signalfx
+  url: https://pypi.org/project/signalfx/
+  install: pip install signalfx
+  repository: https://github.com/signalfx/signalfx-python
+  official: true
+  status: deprecated
+- language: javascript
+  registry: npm
+  name: signalfx
+  url: https://www.npmjs.com/package/signalfx
+  install: npm install signalfx
+  repository: https://github.com/signalfx/signalfx-nodejs
+  official: true
+  status: deprecated
+- language: java
+  registry: maven-central
+  name: com.signalfx.public:signalfx-java
+  url: https://github.com/signalfx/signalfx-java
+  install: "implementation 'com.signalfx.public:signalfx-java'"
+  repository: https://github.com/signalfx/signalfx-java
+  official: true
+  status: deprecated
+- language: ruby
+  registry: rubygems
+  name: signalfx
+  url: https://github.com/signalfx/signalfx-ruby
+  install: gem install signalfx
+  repository: https://github.com/signalfx/signalfx-ruby
+  official: true
+  status: deprecated

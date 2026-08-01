@@ -1,8 +1,31 @@
 aid: signalfx
 name: SignalFx
-description: SignalFx is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  SignalFx is a cloud monitoring and observability platform for modern
+  infrastructure and microservices, founded in 2013 and acquired by Splunk in
+  October 2019. It ingests high-resolution time-series metrics, events, and
+  traces and applies real-time streaming analytics (the SignalFlow computation
+  engine) to power dashboards, charts, detectors, and alerts. The platform is
+  now delivered as Splunk Observability Cloud. SignalFx exposes a realm-based
+  REST API (metadata, detectors, charts, dashboards, integrations, tokens, SLOs)
+  at api.{realm}.signalfx.com, a data-ingest API at ingest.{realm}.signalfx.com,
+  and a SignalFlow streaming API at stream.{realm}.signalfx.com, all
+  authenticated with an X-SF-Token header. First-party client libraries ship for
+  Go, Python, Node.js, Java, and Ruby.
 url: https://raw.githubusercontent.com/api-evangelist/signalfx/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/8532938?s=200&v=4
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,12 +34,104 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Observability
+- Monitoring
+- Metrics
+- Time Series
+- APM
+- Infrastructure Monitoring
+- Alerting
+- DevOps
+- Splunk
+apis:
+- name: SignalFx REST API
+  description: >-
+    The SignalFx REST API manages metadata and configuration objects in Splunk
+    Observability Cloud / SignalFx: metrics and dimension metadata, detectors and
+    alert muting rules, charts, dashboards and dashboard groups, teams, data links,
+    SLOs, organization and access tokens, metric rulesets, and cloud/notification
+    integrations (AWS, Azure, GCP, PagerDuty, Slack, Opsgenie, Jira, ServiceNow).
+    It is realm-based (api.{realm}.signalfx.com) and authenticated with the
+    X-SF-Token header.
+  humanURL: https://dev.splunk.com/observability/reference
+  baseURL: https://api.us1.signalfx.com
+  properties:
+  - type: Documentation
+    url: https://dev.splunk.com/observability/docs
+  - type: APIReference
+    url: https://dev.splunk.com/observability/reference
+  - type: Authentication
+    url: authentication/signalfx-authentication.yml
+  - type: Conventions
+    url: conventions/signalfx-conventions.yml
+  - type: MCPServer
+    url: mcp/signalfx-mcp.yml
+tags_x: []
+common:
+- type: TrustCenter
+  url: security/signalfx-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/signalfx-vulnerability-disclosure.yml
+- type: Security
+  url: https://advisory.splunk.com/report
+- type: Compliance
+  url: https://customertrust.splunk.com/
+- type: DeveloperPortal
+  url: https://dev.splunk.com/observability
+- type: Documentation
+  url: https://dev.splunk.com/observability/docs
+- type: APIReference
+  url: https://dev.splunk.com/observability/reference
+- type: GettingStarted
+  url: https://dev.splunk.com/observability/docs/apibasics/api_getting_started/
+- type: Blog
+  url: https://www.splunk.com/en_us/blog/devops.html
+- type: GitHubOrganization
+  url: https://github.com/signalfx
+- type: SignUp
+  url: https://www.splunk.com/en_us/products/observability.html
+- type: Pricing
+  url: https://www.splunk.com/en_us/products/pricing.html
+- type: TermsOfService
+  url: https://www.splunk.com/en_us/legal/terms.html
+- type: PrivacyPolicy
+  url: https://www.splunk.com/en_us/legal/privacy/privacy-policy.html
+- type: Support
+  url: https://www.splunk.com/en_us/support-and-services.html
+- type: Packages
+  url: packages/signalfx-packages.yml
+- type: SDKs
+  url: packages/signalfx-packages.yml
+- type: Authentication
+  url: authentication/signalfx-authentication.yml
+- type: Conventions
+  url: conventions/signalfx-conventions.yml
+- type: WellKnown
+  url: well-known/signalfx-well-known.yml
+- type: SecurityTxt
+  url: well-known/signalfx-well-known.yml
+- type: MCPServer
+  url: mcp/signalfx-mcp.yml
+- type: LLMsTxt
+  url: llms/signalfx-llms.txt
+- type: Conformance
+  url: conformance/signalfx-conformance.yml
+- type: Lifecycle
+  url: lifecycle/signalfx-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/signalfx-lifecycle.yml
+- type: DomainSecurity
+  url: security/signalfx-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

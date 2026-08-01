@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/signalfx
+versioning:
+  scheme: uri-path
+  current: v2
+  docs: https://dev.splunk.com/observability/reference
+deprecation:
+  policy: >-
+    Following the 2019 Splunk acquisition and the move to OpenTelemetry, SignalFx's
+    per-language instrumentation/client libraries have been formally deprecated and
+    archived (signalfx-python archived 2025-03-01; signalfx-nodejs, signalfx-java,
+    signalfx-ruby archived), directing users to the Splunk Distribution of
+    OpenTelemetry. signalfx-go remains the maintained REST/metadata client.
+  successor: Splunk Distribution of OpenTelemetry
+  deprecated_libraries:
+  - github.com/signalfx/signalfx-python
+  - github.com/signalfx/signalfx-nodejs
+  - github.com/signalfx/signalfx-java
+  - github.com/signalfx/signalfx-ruby
+brand_lifecycle:
+  note: >-
+    The SignalFx brand has been superseded by Splunk Observability Cloud; the
+    underlying realm-based API (api.{realm}.signalfx.com) remains in service.
+status_page: null
+sla:
+  url: https://customertrust.splunk.com/

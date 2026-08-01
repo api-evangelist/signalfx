@@ -1,0 +1,46 @@
+generated: '2026-07-21'
+method: searched
+source: https://dev.splunk.com/observability/docs/apibasics/api_getting_started/
+summary: >-
+  Cross-cutting request/response semantics for the SignalFx / Splunk Observability
+  Cloud REST API. Realm-based hosts, X-SF-Token header auth, JSON bodies, and
+  limit/offset pagination on list/search endpoints.
+authentication:
+  style: api-key-header
+  header: X-SF-Token
+  ref: authentication/signalfx-authentication.yml
+realms:
+  description: >-
+    Every organization lives in a realm (e.g. us0, us1, us2, eu0, jp0, au0). API
+    hosts are realm-scoped and must match the org's realm.
+  rest_host: https://api.{realm}.signalfx.com
+  ingest_host: https://ingest.{realm}.signalfx.com
+  signalflow_host: https://stream.{realm}.signalfx.com
+content_type: application/json
+pagination:
+  style: limit-offset
+  params: [limit, offset]
+  response_fields: [count, results]
+  note: >-
+    List/search endpoints (detectors, charts, dashboards, etc.) return a total
+    `count` and a `results` array, paged with `limit` and `offset` query params.
+idempotency:
+  supported: false
+  note: >-
+    SignalFx does not document a client-supplied idempotency-key header. Object
+    creation is not idempotent; use search-then-update or object IDs to avoid
+    duplicates.
+versioning:
+  scheme: uri-path
+  note: REST resources are served under versioned paths (e.g. /v2/detector, /v2/chart).
+rate_limiting:
+  documented: true
+  note: >-
+    Ingest and API request limits apply per organization/token; exceeding limits
+    returns HTTP 429. Limits vary by subscription tier.
+error_envelope:
+  ref: errors/signalfx-problem-types.yml
+  note: JSON error body with message/code fields; not RFC 9457 problem+json.
+cross_links:
+  authentication: authentication/signalfx-authentication.yml
+  lifecycle: lifecycle/signalfx-lifecycle.yml

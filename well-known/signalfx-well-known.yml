@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+note: >-
+  Probed the SignalFx REST API host (api.us1.signalfx.com) and the Splunk
+  Observability developer host (dev.splunk.com). The API host publishes no
+  /.well-known documents (all 404); dev.splunk.com 302-redirects all probes. The
+  only real well-known document in the SignalFx/Splunk estate is the parent
+  Splunk security.txt (RFC 9116), canonical at splunk.com and advisory.splunk.com.
+hosts_probed:
+- host: https://api.us1.signalfx.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://dev.splunk.com
+  documents:
+  - {path: /.well-known/security.txt, status: 302}
+  - {path: /.well-known/openid-configuration, status: 302}
+  - {path: /.well-known/oauth-authorization-server, status: 302}
+  - {path: /.well-known/api-catalog, status: 302}
+  - {path: /.well-known/ai-plugin.json, status: 302}
+documents:
+- path: /.well-known/security.txt
+  host: https://advisory.splunk.com
+  status: 200
+  url: https://advisory.splunk.com/.well-known/security.txt
+  note: >-
+    RFC 9116 security.txt (parent Splunk org, PGP-signed). Contact
+    prodsec@splunk.com; Policy https://advisory.splunk.com/report;
+    Expires 2027-03-01.
