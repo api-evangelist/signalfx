@@ -2,11 +2,9 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: https://github.com/signalfx/signalfx-go
-note: >-
-  No official hosted/remote SignalFx MCP server was found. This is a CANDIDATE
-  tool list derived from the resource surface of the signalfx-go client library
-  (which is generated from the SignalFx REST OpenAPI). Not an authoritative
-  provider manifest.
+note: No official hosted/remote SignalFx MCP server was found. This is a CANDIDATE tool list derived from
+  the resource surface of the signalfx-go client library (which is generated from the SignalFx REST OpenAPI).
+  Not an authoritative provider manifest.
 server:
   name: signalfx
   transport: http
@@ -49,3 +47,9 @@ tools:
   description: List organization/access tokens
 - name: list_teams
   description: List teams
+deployment:
+  mode: none
+  verified: derived
+  tools: 19
+  checked: '2026-08-12'
+  source: catalog MCP census
