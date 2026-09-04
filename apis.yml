@@ -22,15 +22,16 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: self-serve
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Self-serve signup
-  confidence: medium
+  label: Unknown
+  confidence: low
   source:
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://avatars.githubusercontent.com/u/8532938?s=200&v=4
 x-type: company
@@ -71,8 +72,9 @@ apis:
     url: authentication/signalfx-authentication.yml
   - type: Conventions
     url: conventions/signalfx-conventions.yml
-  - type: MCPServer
+  - type: X-MCPServerCandidate
     url: mcp/signalfx-mcp.yml
+    note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 tags_x: []
 common:
 - type: ParentCompany
@@ -123,8 +125,9 @@ common:
   url: well-known/signalfx-well-known.yml
 - type: SecurityTxt
   url: well-known/signalfx-well-known.yml
-- type: MCPServer
+- type: X-MCPServerCandidate
   url: mcp/signalfx-mcp.yml
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 - type: LLMsTxt
   url: llms/signalfx-llms.txt
 - type: Conformance
